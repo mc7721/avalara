@@ -1,0 +1,149 @@
+{
+    "name": "Avalara",
+    "description": "Avalara is software for automated tax compliance. Whether you are selling online, starting a new business, or need help filing internationally Avalara can help.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1284-avadev.jpg",
+    "tags": [
+        "api provider",
+        "erp",
+        "financial",
+        "have api",
+        "have swagger",
+        "profile",
+        "tax compliance",
+        "tax laws",
+        "taxes"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/avalara\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Avalara",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1284-avadev.jpg",
+            "humanURL": "http:\/\/www.avalara.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/avalara.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/avalara-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/avalara-postman-collection.json"
+                }
+            ]
+        },
+        {
+            "name": "LandedCost Calculation API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1284-avadev.jpg",
+            "humanURL": "http:\/\/www.avalara.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/landedcost-calculation-api.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/landedcost-calculation-api-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/landedcost-calculation-api-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "https:\/\/avatax.avalara.net"
+        },
+        {
+            "type": "Blog",
+            "url": "https:\/\/www.avalara.com\/us\/en\/blog.html"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.avalara.com"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/developer.avalara.com\/feed"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/avalara"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/avalara"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/developer.avalara.com\/avalara-apis\/"
+        },
+        {
+            "type": "Developers",
+            "url": "http:\/\/developer.avalara.com"
+        },
+        {
+            "type": "Email",
+            "url": "media@avalara.com"
+        },
+        {
+            "type": "Email",
+            "url": "dataprivacy@avalara.com"
+        },
+        {
+            "type": "Email",
+            "url": "legal@avalara.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/Avalara"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1284-2019-09-04-09-07-53.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1284-2019-09-04-09-08-01.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/1284-2019-09-04-09-08-17.json"
+        },
+        {
+            "type": "Terms of Service",
+            "url": "https:\/\/www.avalara.com\/us\/en\/legal\/site-terms.html"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/avadev"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/avalara"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/avalara.com"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/www.avalara.com"
+        }
+    ]
+}
