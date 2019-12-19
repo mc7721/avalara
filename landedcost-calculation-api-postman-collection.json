@@ -1,0 +1,59 @@
+{
+    "id": "b7040682efb91faa49333401455e0d1e",
+    "name": "LandedCost Calculation API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "dbd326287254a76de39e5ca5eae723d0",
+            "name": "Validate Credentials",
+            "url": "http:\/\/sandbox.landedcost.api.avalara.com\/\/v3\/validate-creds",
+            "description": "Convenience API to check credentials. This API is purposefully non-performant.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b7040682efb91faa49333401455e0d1e",
+            "rawModeData": ""
+        },
+        {
+            "id": "9593c93337f199a08876722334b5bb5c",
+            "name": "Calculate Landed Cost",
+            "url": "http:\/\/sandbox.landedcost.api.avalara.com\/\/v3\/calculate",
+            "description": "Returns the fully qualified landed cost calculation for a shipment",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b7040682efb91faa49333401455e0d1e",
+            "rawModeData": ""
+        }
+    ]
+}
