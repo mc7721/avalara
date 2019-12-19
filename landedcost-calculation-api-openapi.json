@@ -1,0 +1,291 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "3.0",
+        "title": "LandedCost Calculation API",
+        "description": "Landed Cost API providing duty rates, calculation, and item harmonization. A set of sample requests are available as a [Postman Collection](https:\/\/www.getpostman.com\/collections\/ad308f6c9351a18c2c12).\n## Basics\n### Timestamps\nTimestamps should be formatted using ISO-8601 to the nearest second, in UTC e.g `2015-06-12T09:17:37Z`\n### Expiries\nAll Requests will have an associated timestamp. The validity for any request is 1 minute to account for any clock-skew. \n## Authorization\nAll API requests require an http header that contains your account ID and your account API Key. During account provisioning, you will be issued an API Key which you must supply with every request.\n### Authorization Header\nTo make an authorized API request, set the following HTTP header: \n`authorization: avalaraapikey id:<accountId> key:<apiKey>`",
+        "termsOfService": "http:\/\/exmple.com\/license\/"
+    },
+    "servers": [
+        "http:\/\/sandbox.landedcost.api.avalara.com\/"
+    ],
+    "paths": {
+        "\/v3\/validate-creds": {
+            "get": {
+                "summary": "Validate Credentials",
+                "description": "Convenience API to check credentials. This API is purposefully non-performant.",
+                "operationId": "ValidateCreds",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Credentials are valid and account has active Landed Cost subscription."
+                    }
+                }
+            }
+        },
+        "\/v3\/calculate": {
+            "post": {
+                "summary": "Calculate Landed Cost",
+                "description": "Returns the fully qualified landed cost calculation for a shipment",
+                "operationId": "Calculate",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "Friendly error response",
+                        "type": "string"
+                    },
+                    "Error": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "CalculateBase": {
+                "type": "object",
+                "properties": {
+                    "charges": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "date": {
+                        "description": "Transaction date in ISO 8601 format",
+                        "type": "string"
+                    },
+                    "incoterms": {
+                        "description": "Terms of sale. Used to determine buyer obligations",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "destination": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "entityType": {
+                        "description": "Type of sale. Can be used to determine applicable tax types",
+                        "type": "string"
+                    },
+                    "currency": {
+                        "description": "Currency, in ISO 4217 format",
+                        "type": ""
+                    },
+                    "shipping": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "discount": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "charges": {
+                "type": "array"
+            },
+            "source": {
+                "type": "array",
+                "properties": {
+                    "country": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "region": {
+                        "description": "Source region of the shipment, in ISO 3166-2 format",
+                        "type": "string"
+                    }
+                }
+            },
+            "destination": {
+                "type": "array",
+                "properties": {
+                    "country": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "region": {
+                        "description": "Destination region of the shipment, in ISO 3166-2 format",
+                        "type": ""
+                    }
+                }
+            },
+            "currency": {
+                "type": "object"
+            },
+            "shipping": {
+                "type": "object"
+            },
+            "discount": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "The type of discount to apply. Currently, the system only supports sales discounts offered directly to consumers",
+                        "type": "string"
+                    },
+                    "rate": {
+                        "description": "A percentage to discount the shipment or item",
+                        "type": "number"
+                    },
+                    "amount": {
+                        "description": "A flate amount to discount the shipment or item",
+                        "type": "number"
+                    }
+                }
+            },
+            "CalculateRequestRateOverride": {
+                "type": "object",
+                "properties": {
+                    "rate": {
+                        "description": "The rate as written in the source material",
+                        "type": "string"
+                    },
+                    "formula": {
+                        "description": "The rate converted to landedCost DSL",
+                        "type": "string"
+                    },
+                    "rateSection": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "type": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "rateSection": {
+                "type": "object"
+            },
+            "type": {
+                "type": "object"
+            },
+            "CalculateRequest": {
+                "type": "object"
+            },
+            "CalculateResponse": {
+                "type": "object"
+            },
+            "country": {
+                "type": "object"
+            },
+            "region": {
+                "type": "object"
+            },
+            "RatesRequest": {
+                "type": "array"
+            },
+            "RatesResponse": {
+                "type": "array"
+            },
+            "UnitsRequest": {
+                "type": "array"
+            },
+            "UnitsResponse": {
+                "type": "array"
+            },
+            "GetCountriesListingsResponse": {
+                "type": "object",
+                "properties": {
+                    "destination": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "GetSystemForCountryResponse": {
+                "type": "object",
+                "properties": {
+                    "export": {
+                        "description": "The system of export classification between the source and destination countries specified",
+                        "type": "object"
+                    },
+                    "import": {
+                        "description": "The system of import classification between the source and destination countries specified",
+                        "type": "object"
+                    }
+                }
+            },
+            "export": {
+                "type": "object"
+            },
+            "import": {
+                "type": "object"
+            },
+            "BrowseHSDataResponse": {
+                "type": "object",
+                "properties": {
+                    "hsCode": {
+                        "description": "The harmonized code",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The human-readable description of the classification",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the node; this can be used to find the child nodes",
+                        "type": "string"
+                    }
+                }
+            },
+            "GetRateDetailsResponse": {
+                "type": "object",
+                "properties": {
+                    "hsCode": {
+                        "description": "The harmonized code",
+                        "type": "string"
+                    },
+                    "system": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "codePath": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "rates": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "codePath": {
+                "type": "array"
+            },
+            "rates": {
+                "type": "array"
+            },
+            "GetRateDataResponse": {
+                "type": "object",
+                "properties": {
+                    "hsCode": {
+                        "description": "The harmonized code",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the node; this can be used to find the child nodes",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The human-readable description of the classification",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
